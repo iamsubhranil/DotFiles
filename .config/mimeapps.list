@@ -1,0 +1,13 @@
+[Added Associations]
+application/pdf=org.gnome.Evince.desktop;
+image/jpeg=qimgv.desktop;gimp.desktop;feh.desktop;
+video/x-matroska=vlc.desktop;
+video/mp4=vlc.desktop;
+audio/flac=vlc.desktop;
+text/x-csrc=vim.desktop;
+image/png=qimgv.desktop;gimp.desktop;
+text/x-log=org.gnome.gedit.desktop;
+application/x-cue=org.gnome.gedit.desktop;vlc.desktop;mpv.desktop;
+application/x-shellscript=org.gnome.gedit.desktop;
+text/plain=org.gnome.gedit.desktop;
+video/x-msvideo=vlc.desktop;

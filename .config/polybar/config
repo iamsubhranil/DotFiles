@@ -1,0 +1,432 @@
+[colors]
+
+black = #222222
+black-light = #444444
+red = #ff000f
+red-light = #ff273f
+green = #8ce00a
+green-light = #abe05a
+yellow = #ffb900
+yellow-light = #ffd141
+blue = #008df8
+blue-light = #0092ff
+magenta = #6c43a5
+magenta-light = #9a5feb
+cyan = #00d7eb
+cyan-light = #67ffef
+
+[bar/top]
+enable-ipc = true
+;bottom = true
+monitor = eDP1
+;width = 100%
+;height = 43
+;dpi = 192
+
+background = #f00d0f18
+foreground = #eee
+
+color-red = #ff000f
+
+line-color = #1f1f1f 
+line-size = 2
+
+padding-left = 1
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
+
+;separator = |
+
+;font-0 = NotoSans-Regular:size=19;-1
+
+;font-0 = Misc\ Termsynu:size=19:antialias=false;3
+;font-0 = NotoSans-Regular:size=10;2
+;font-1 = Material\ Icons:size=10;0
+;font-2 = Misc\ Termsynu:size=10;-2
+;font-3 = FontAwesome:size=9;0
+
+font-0 = Cascadia\ Code:size=11;0
+font-1 = MesloLGL\ Nerd\ Font:size=11;0
+font-2 = FontAwesome:size=11
+
+modules-left = i3 
+modules-right = cpu memory temperature battery network date powermenu 
+;modules-right = consumation battery date
+
+;wm-restack = i3
+
+tray-position = right 
+tray-scale = 1.0
+;tray-transparent = true
+tray-background = ${self.background}
+tray-maxsize = 64
+
+tray-offset-y = 0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+;overline-size = 10
+;overline-color = ${self.background}
+;underline-size = 2
+;underline-color = ${self.background}
+
+[module/backlight]
+type = internal/backlight
+format = <label>
+#format = <ramp> <bar>
+
+card =  intel_backlight
+
+label = %percentage%%
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-font = 1
+bar-indicator-foreground = #ff
+bar-fill = ─
+bar-fill-font = 1
+bar-fill-foreground = #c9665e
+bar-empty = ─
+bar-empty-font = 1
+bar-empty-foreground = #44
+
+[module/consumation]
+type = custom/script
+
+exec = $HOME/.config/polybar/power.sh
+interval = 2
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+label-charging = %percentage:3%%
+label-discharging = %percentage:3%%
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.red-light}
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.yellow}
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.green}
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.green}
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 1
+bar-capacity-empty = █
+bar-capacity-empty-font = 1
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+animation-charging-foreground = ${colors.green}
+
+[module/bspwm-tmp]
+type = internal/bspwm
+format = <label-state>
+
+label-active = 
+label-active-padding = 1
+label-occupied = 
+label-occupied-padding = 1
+label-empty = 
+label-empty-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <ramp-load> <label>
+label = %percentage:3%%
+
+ramp-load-0 = 
+ramp-load-0-foreground = ${colors.green-light}
+ramp-load-1 = 
+ramp-load-1-foreground = ${colors.green}
+ramp-load-2 = 
+ramp-load-2-foreground = ${colors.yellow-light}
+ramp-load-3 = 
+ramp-load-3-foreground = ${colors.yellow}
+ramp-load-4 = 
+ramp-load-4-foreground = ${colors.red-light}
+ramp-load-5 = 
+ramp-load-5-foreground = ${colors.red}
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 1
+ramp-coreload-0-foreground = ${colors.green-light}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 1
+ramp-coreload-1-foreground = ${colors.green-light}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 1
+ramp-coreload-2-foreground = ${colors.green}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 1
+ramp-coreload-3-foreground = ${colors.green}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 1
+ramp-coreload-4-foreground = ${colors.yellow-light}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 1
+ramp-coreload-5-foreground = ${colors.yellow}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 1
+ramp-coreload-6-foreground = ${colors.red-light}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 1
+ramp-coreload-7-foreground = ${colors.red}
+
+[module/date]
+type = internal/date
+date = %{F#9a5feb}%{F-} %a, %b %d %Y %{F#0092ff}%{F-} %I:%M:%S %p
+
+[module/memory]
+type = internal/memory
+format =  <ramp-used> <label>
+label = %percentage_used:3%%
+foreground = #9a5feb
+
+ramp-used-0 = 
+ramp-used-0-foreground = ${colors.green-light}
+ramp-used-1 = 
+ramp-used-1-foreground = ${colors.green}
+ramp-used-2 = 
+ramp-used-2-foreground = ${colors.yellow-light}
+ramp-used-3 = 
+ramp-used-3-foreground = ${colors.yellow}
+ramp-used-4 = 
+ramp-used-4-foreground = ${colors.red}
+
+[module/mpd]
+type = internal/mpd
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground =
+toggle-off-foreground = #55
+
+bar-progress-width = 45
+bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
+bar-progress-indicator = |
+bar-progress-indicator-foreground = #ff
+bar-progress-indicator-font = 1
+bar-progress-fill = ─
+bar-progress-fill-foreground = #bb
+bar-progress-fill-font = 1
+bar-progress-empty = ─
+bar-progress-empty-font = 1
+bar-progress-empty-foreground = #44
+
+[module/network]
+type = internal/network
+interface = wlp1s0
+interval = 1.0
+ping-interval = 10
+
+format-connected = <label-connected>
+label-connected = %{F#8ce00a}%{F-} %downspeed:8%  %{F#ffb900}%{F-} %upspeed:8%
+label-disconnected = 睊
+label-disconnected-foreground = ${colors.yellow}
+
+
+[module/volume]
+type = internal/alsa
+;speaker-mixer = Speaker
+;headphone-mixer = Headphone
+headphone-id = 9
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage:3%%
+label-muted = ﱝ
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-volume-0-foreground = ${colors.green}
+ramp-volume-1-foreground = ${colors.yellow}
+ramp-volume-2-foreground = ${colors.red}
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted =  %mountpoint%: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = #66
+
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+label-close = 
+label-separator =  |  
+label-padding = 1
+
+menu-0-0 = Reboot
+menu-0-0-foreground = ${colors.green}
+menu-0-0-exec = menu-open-1
+menu-0-1 = Power off
+menu-0-1-foreground = ${colors.red}
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = Reboot
+menu-1-0-foreground = ${colors.green}
+menu-1-0-exec = reboot
+menu-1-1 = Cancel
+menu-1-1-foreground = ${colors.blue}
+menu-1-1-exec = menu-open-0
+
+menu-2-0 = Cancel   
+menu-2-0-foreground = ${colors.green}
+menu-2-0-exec = menu-open-0
+menu-2-1 = Power off
+menu-2-1-foreground = ${colors.red}
+menu-2-1-exec = shutdown now
+
+[module/clock]
+type = internal/date
+interval = 2
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 4
+base-temperature = 30
+warn-temperature = 65
+
+format = <ramp> <label>
+;format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+;format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.red}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+;ramp-foreground = #66
+
+ramp-0-foreground = ${colors.green-light}
+ramp-1-foreground = ${colors.green}
+ramp-2-foreground = ${colors.yellow}
+ramp-3-foreground = ${colors.red-light}
+ramp-4-foreground = ${colors.red}
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+ws-icon-0 = 1;♚
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+ws-icon-default = ♟
+
+label-dimmed-underline = ${root.background}
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 0
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused =  %index%
+label-focused-foreground = #ffffff
+label-focused-background = #222222
+label-focused-underline = ${colors.blue}
+label-focused-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 1
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 0
+label-separator-foreground = ${colors.blue}
+
+; vim:ft=dosini
