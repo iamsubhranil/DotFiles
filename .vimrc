@@ -44,7 +44,7 @@ Plugin 'posva/vim-vue'
 Plugin 'Dru89/vim-adventurous'
 " Plugin 'beigebrucewayne/hacked_ayu.vim'
 Plugin 'chriskempson/base16-vim'
-
+Plugin 'rhysd/vim-clang-format'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -245,8 +245,6 @@ let g:phpcomplete_mappings = {
   \ 'jump_to_def': '<leader>g',
   \ }
 
-" drop a PsySH debug statement
-nmap <leader>dd ieval(\Psy\sh());<esc>==
 
 " PHP docblocks
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
@@ -328,9 +326,4 @@ endif
 
 let g:omni_sql_no_default_maps = 1
 
-" clang-format on save
-function! Formatonsave()
-  let l:formatdiff = 1
-  pyf /usr/share/clang/clang-format.py
-endfunction
-autocmd BufWritePre *.h,*.cc,*.cpp call Formatonsave()
+autocmd FileType c,cpp,objc ClangFormatAutoEnable

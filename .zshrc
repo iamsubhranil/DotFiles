@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages)
 # User configuration
 
-#export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/jay/.gem/ruby/2.3.0/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -76,9 +76,12 @@ export EDITOR='vim'
 #
 # Aliases
 
-BASE16_SHELL=/home/iamsubhranil/.config/base16-shell/
-BASE16_SHELL_HOOKS=/home/iamsubhranil/.config/base16-shell/hooks/
-CC=clang
-CXX=clang++
+export BASE16_SHELL=/home/iamsubhranil/.config/base16-shell/
+export BASE16_SHELL_HOOKS=/home/iamsubhranil/.config/base16-shell/hooks/
+export CC=clang
+export CXX=clang++
+alias ls=exa
+alias gfl="git flow"
+
 cowfortune
 kitty + complete setup zsh | source /dev/stdin
