@@ -82,6 +82,16 @@ export CC=clang
 export CXX=clang++
 alias ls=exa
 alias gfl="git flow"
+alias sudo='sudo '
+alias gp="git pushall"
+alias cat=bat
+alias find=fd
+alias start_bluetooth="sudo rfkill unblock bluetooth && sudo systemctl start bluetooth.service && bluetoothctl power on"
+alias stop_bluetooth="bluetoothctl power off && sudo systemctl stop bluetooth.service && sudo rfkill block bluetooth"
+
+replace() {
+    find "${@:2}" -type f -exec sed -i "$1" {} \;
+}
 
 cowfortune
 kitty + complete setup zsh | source /dev/stdin

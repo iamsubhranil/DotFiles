@@ -24,7 +24,7 @@ monitor = eDP1
 ;dpi = 192
 
 background = #f00d0f18
-foreground = #eee
+foreground = #f0ebdbb2
 
 color-red = #ff000f
 
@@ -50,8 +50,8 @@ font-0 = Cascadia\ Code:size=11;0
 font-1 = MesloLGL\ Nerd\ Font:size=11;0
 font-2 = FontAwesome:size=11
 
-modules-left = i3 
-modules-right = cpu memory temperature battery network date powermenu 
+modules-left = i3
+modules-right = mpd cpu memory temperature battery network date powermenu 
 ;modules-right = consumation battery date
 
 ;wm-restack = i3
@@ -103,14 +103,14 @@ interval = 2
 
 [module/battery]
 type = internal/battery
-full-at = 98
+full-at = 100
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
-label-charging = %percentage:3%%
-label-discharging = %percentage:3%%
+label-charging =  %percentage:3%%
+label-discharging =  %percentage:3%%
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.red}
 ramp-capacity-1 = 
@@ -217,30 +217,15 @@ ramp-used-4-foreground = ${colors.red}
 
 [module/mpd]
 type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-random = 
-icon-repeat = 
+format-online = <label-song> <icon-prev> <toggle> <icon-next>
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 玲
+icon-next = 怜
 
 toggle-on-foreground =
 toggle-off-foreground = #55
-
-bar-progress-width = 45
-bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
-bar-progress-indicator = |
-bar-progress-indicator-foreground = #ff
-bar-progress-indicator-font = 1
-bar-progress-fill = ─
-bar-progress-fill-foreground = #bb
-bar-progress-fill-font = 1
-bar-progress-empty = ─
-bar-progress-empty-font = 1
-bar-progress-empty-foreground = #44
 
 [module/network]
 type = internal/network
