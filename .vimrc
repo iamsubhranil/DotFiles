@@ -10,7 +10,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 " Plugin 'rust-lang/rust.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -22,29 +22,31 @@ Plugin 'Raimondi/delimitMate'
 " Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'dense-analysis/ale'
 " Plugin 'airblade/vim-gitgutter'
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'mileszs/ack.vim'
 " Plugin 'skwp/greplace.vim'
 " Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'tobyS/vmustache'
-Plugin 'duggiefresh/vim-easydir'
-Plugin 'tobyS/pdv'
+" Plugin 'tobyS/vmustache'
+" Plugin 'duggiefresh/vim-easydir'
+" Plugin 'tobyS/pdv'
 Plugin 'NLKNguyen/copy-cut-paste.vim'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-dispatch'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
+" Plugin 'tpope/vim-bundler'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'xolox/vim-misc'
+" Plugin 'xolox/vim-session'
 Plugin 'editorconfig/editorconfig-vim'
 " Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'posva/vim-vue'
+" Plugin 'posva/vim-vue'
 Plugin 'Dru89/vim-adventurous'
 " Plugin 'beigebrucewayne/hacked_ayu.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'rhysd/vim-clang-format'
+" Plugin 'shirk/vim-gas'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -259,6 +261,7 @@ let g:user_emmet_leader_key = '<C-e>'
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_use_global_ycm_extra_conf = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_min_num_of_chars_for_completion=2
@@ -327,3 +330,21 @@ endif
 let g:omni_sql_no_default_maps = 1
 
 autocmd FileType c,cpp,objc ClangFormatAutoEnable
+
+if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'next') == -1
+  augroup filetypedetect
+  " dlang, from dcov.vim in JesseKPhillips/d.vim
+autocmd BufNewFile,BufRead *.n set filetype=next
+  augroup end
+endif
+
+autocmd BufNewFile,BufRead *.S set filetype=asm
+
+" In ~/.vim/vimrc, or somewhere similar.
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['autopep8', 'black'],
+\   'javascript': ['eslint'],
+\}
+
+let g:ale_fix_on_save = 1

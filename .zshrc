@@ -5,7 +5,7 @@ export ZSH=/home/iamsubhranil/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+# ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -49,10 +49,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages)
+plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages gh heroku)
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -80,6 +80,7 @@ export BASE16_SHELL=/home/iamsubhranil/.config/base16-shell/
 export BASE16_SHELL_HOOKS=/home/iamsubhranil/.config/base16-shell/hooks/
 export CC=clang
 export CXX=clang++
+export BAT_THEME="gruvbox-dark"
 alias ls=exa
 alias gfl="git flow"
 alias sudo='sudo '
@@ -90,8 +91,10 @@ alias start_bluetooth="sudo rfkill unblock bluetooth && sudo systemctl start blu
 alias stop_bluetooth="bluetoothctl power off && sudo systemctl stop bluetooth.service && sudo rfkill block bluetooth"
 
 replace() {
-    find "${@:2}" -type f -exec sed -i "$1" {} \;
+    find  "${@:2}" --type f --exec sed -i "$1" {} \;
 }
 
 cowfortune
 kitty + complete setup zsh | source /dev/stdin
+
+eval "$(starship init zsh)"

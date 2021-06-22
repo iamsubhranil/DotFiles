@@ -462,10 +462,10 @@ exec journalctl --flush &
 #exec --no-startup-id $HOME/.scripts/blurme/blurme &
 exec --no-startup-id polybar top &
 exec_always --no-startup-id $HOME/.scripts/wallscript/wallscript.sh nature &
-exec --no-startup-id sudo /bin/wicd &
+#exec --no-startup-id sudo /bin/wicd &
 # exec dwall -firewatch &
 exec pulseeffects --gapplication-service &
-exec mpd &
+# exec mpd &
 #exec --no-startup-id mount_all &
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font pango:MesloLGL Nerd Font 10# bindsym XF86MonBrightnessUp exec xbacklight -inc 5
