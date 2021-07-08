@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages gh heroku)
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin"
+export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
-
+export TERMINAL='kitty'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -76,8 +76,6 @@ export EDITOR='vim'
 #
 # Aliases
 
-export BASE16_SHELL=/home/iamsubhranil/.config/base16-shell/
-export BASE16_SHELL_HOOKS=/home/iamsubhranil/.config/base16-shell/hooks/
 export CC=clang
 export CXX=clang++
 export BAT_THEME="gruvbox-dark"
