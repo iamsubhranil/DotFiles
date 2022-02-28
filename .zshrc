@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages gh heroku)
 # User configuration
 
-export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin"
+export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin:~/.gem/ruby/3.0.0/"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
