@@ -32,7 +32,7 @@ eval `cat ~/.fehbg`
 #################################################################
 # Set some variables
 #################################################################
-directory=/mnt/Media/Wallpapers/Unspalsh/
+directory=/mnt/FastStorage/Wallpapers/Unsplash/
 mkdir -p $directory
 
 #Base Bing URL

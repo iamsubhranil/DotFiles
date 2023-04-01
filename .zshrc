@@ -49,10 +49,10 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages gh heroku)
+plugins=( git zsh-autosuggestions zsh-syntax-highlighting git-flow-completion colored-man-pages gh heroku virtualenv)
 # User configuration
 
-export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin:~/.gem/ruby/3.0.0/"
+export PATH="/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin:~/.gem/ruby/3.0.0/:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

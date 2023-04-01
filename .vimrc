@@ -13,15 +13,15 @@ Plugin 'Valloric/YouCompleteMe'
 " Plugin 'vim-syntastic/syntastic'
 " Plugin 'rust-lang/rust.vim'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'honza/vim-snippets'
 " Plugin 'mattn/emmet-vim'
 Plugin 'sheerun/vim-polyglot'
 " Plugin 'valloric/MatchTagAlways'
 " Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'Raimondi/delimitMate'
+" Plugin 'Raimondi/delimitMate'
 " Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
+" Plugin 'scrooloose/nerdcommenter'
 " Plugin 'dense-analysis/ale'
 " Plugin 'airblade/vim-gitgutter'
 " Plugin 'terryma/vim-multiple-cursors'
@@ -38,7 +38,7 @@ Plugin 'NLKNguyen/copy-cut-paste.vim'
 " Plugin 'tpope/vim-dispatch'
 " Plugin 'xolox/vim-misc'
 " Plugin 'xolox/vim-session'
-Plugin 'editorconfig/editorconfig-vim'
+" Plugin 'editorconfig/editorconfig-vim'
 " Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ryanoasis/vim-devicons'
 " Plugin 'posva/vim-vue'
@@ -64,7 +64,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 "colorscheme gruvbox
-set encoding=utf8
+set encoding=UTF-8
 
 " gVim - Gui Settings
 if has("gui_running")
@@ -348,3 +348,7 @@ let g:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 1
+
+" fix garbage characters at startup
+" on use of airline with devicons
+set t_RV=
